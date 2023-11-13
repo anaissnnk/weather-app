@@ -1,16 +1,28 @@
-async function logWeather() {
+/*async function logWeather() {
     const response = await fetch("https://geocoding-api.open-meteo.com/v1/search?name=Gent&count=1&language=en&format=json");
     const weather = await response.json();
     //console.log(JSON.stringify(weather, null, 2));
     console.log("Name = " + weather.results[0].name);
 
+}*/
+
+
+async function searchCity () {
+    let inputCity = document.querySelector("input").value;
+    let response = await fetch ("https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(inputCity));
+    console.log(response);
 }
 
-logWeather();
+const searchButton = document.querySelector("button");
+searchButton.addEventListener("click", () => {
+    searchCity();
+})
 
-
-
-
+/*PRESSENTER FUNCTION pressEnter.addEventListener("keyup", (event) => {
+    if (event.isComposing || event.keyCode === 13) {
+        //code to execute
+    }
+})*/
 
 
 
