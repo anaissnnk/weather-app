@@ -11,6 +11,16 @@ async function searchCity () {
     let cityCountry = document.createElement("h3");
     document.body.append(cityCountry);
     cityCountry.textContent = cityInformation.results[0].country;
+    //Lattitude
+    let cityLatitude = document.createElement("h4");
+    document.body.append(cityLatitude);
+    cityLatitude.textContent = cityInformation.results[0].latitude;
+    //Longitude
+    let cityLongitude = document.createElement("h4");
+    document.body.append(cityLongitude);
+    cityLongitude.textContent = cityInformation.results[0].longitude;
+    //All info
+    console.log(JSON.stringify(cityInformation, null, 2));
 }
 
 const searchButton = document.querySelector("button");
