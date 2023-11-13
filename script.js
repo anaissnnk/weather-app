@@ -1,4 +1,4 @@
-//Search and display city name + country
+//Display city information + forecast
 async function searchCity () {
     let inputCity = document.querySelector("input").value;
     let chosenCity = await fetch ("https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(inputCity));
@@ -20,7 +20,17 @@ async function searchCity () {
     document.body.append(cityLongitude);
     cityLongitude.textContent = cityInformation.results[0].longitude;
     //All info
-    console.log(JSON.stringify(cityInformation, null, 2));
+    //console.log(JSON.stringify(cityInformation, null, 2));
+
+    //Forecast
+    let cityForecast = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + encodeURIComponent(cityLatitude.textContent) + "&longitude=" + encodeURIComponent(cityLongitude.textContent) + "&hourly=temperature_2m&daily=weather_code");
+    
+    //https://api.open-meteo.com/v1/forecast?latitude=48.2085&longitude=16.3721&hourly=temperature_2m&daily=weather_code
+    let forecastInformation = await cityForecast.json();
+    console.log(forecastInformation);
+
+    //let todayForecast =
+
 }
 
 const searchButton = document.querySelector("button");
