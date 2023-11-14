@@ -72,6 +72,7 @@ async function getWeather () {
             const weathersDescription = document.createElement("article");
             weathersDescription.classList.add("second-forecast-article");
             weathersDescription.textContent = weatherBook[code].day.description;
+
             const forecastSecondSection = document.getElementById("forecast-secondsection");
             forecastSecondSection.append(weathersDescription);
             const secondweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(4, 7);
@@ -104,7 +105,7 @@ async function getWeather () {
     newSearch();
 }
 
-//DISABLE BUTTON
+//SEARCH BUTTON
 const searchButton = document.querySelector("button");
 searchButton.addEventListener("click", () => {
     getWeather();

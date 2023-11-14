@@ -17,12 +17,16 @@
 //SEARCH BAR
 .search {
     text-align: center;
-    max-width: 40%;
+    max-width: 35%;
     margin: auto;
     padding: 1ch;
     background-color: lightblue;
     .search-heading {
         margin: 1ch;
+    }
+    .app-article {
+        margin: 1ch;
+        background-color: lightseagreen;
     }
 }
 
@@ -63,6 +67,6 @@
     flex-grow: 1;
     margin: 1ch;
     text-align: center;
-    max-width: 25%;
+    max-width: 20%;
 }
 
