@@ -10,13 +10,15 @@ async function getWeather () {
     //All info
     //console.log(JSON.stringify(cityInformation, null, 2));
     //Name
-    const main = document.querySelector("main");
+    const cityInfoSection = document.getElementById("city-information");
     const cityName = document.createElement("h2");
-    main.append(cityName);
+    cityName.classList.add('city-name');
+    cityInfoSection.append(cityName);
     cityName.textContent = cityInformation.results[0].name;
     //Country
     const cityCountry = document.createElement("h3");
-    main.append(cityCountry);
+    cityCountry.classList.add('country-name');
+    cityInfoSection.append(cityCountry);
     cityCountry.textContent = cityInformation.results[0].country;
     //Lattitude
     const cityLatitude = cityInformation.results[0].latitude;
@@ -28,42 +30,71 @@ async function getWeather () {
     const forecastInformation = await weatherApi.json();
     //console.log(forecastInformation);
     //const weekDays = forecastInformation.daily.time;
-    const weathersCodes = forecastInformation.daily.weather_code;
-    weathersCodes.forEach(code => {
+    const firstweathersCodes = forecastInformation.daily.weather_code.slice(0, 4);
+    firstweathersCodes.forEach(code => {
         if (weatherBook.hasOwnProperty(code)) {
-            const weathersDescription = document.createElement("section");
-            weathersDescription.classList.add('forecast-section');
+            const weathersDescription = document.createElement("article");
+            weathersDescription.classList.add('forecast-article');
             weathersDescription.textContent = weatherBook[code].day.description;
-            main.append(weathersDescription);
+            const forecastFirstSection = document.getElementById("forecast-firstsection");
+            forecastFirstSection.append(weathersDescription);
         } else {
-            const codeNotFound = document.createElement("section");
+            const codeNotFound = document.createElement("article");
             codeNotFound.textContent = "Weather Code not found, but if it's Belgium it'll probably rain."
-            main.append(codeNotFound);
+            forecastFirstSection.append(codeNotFound);
         }
     });
+    const secondweathersCodes = forecastInformation.daily.weather_code.slice(4, 7);
+    secondweathersCodes.forEach(code => {
+        if (weatherBook.hasOwnProperty(code)) {
+            const weathersDescription = document.createElement("article");
+            weathersDescription.classList.add('forecast-article');
+            weathersDescription.textContent = weatherBook[code].day.description;
+            const forecastSecondSection = document.getElementById("forecast-secondsection");
+            forecastSecondSection.append(weathersDescription);
+        } else {
+            const codeNotFound = document.createElement("article");
+            codeNotFound.textContent = "Weather Code not found, but if it's Belgium it'll probably rain."
+            forecastSecondSection.append(codeNotFound);
+        }
+    })
     newSearch();
 }
 
+//DISABLE BUTTON
+const searchButton = document.querySelector("button");
+searchButton.addEventListener("click", () => {
+    getWeather();
+    searchButton.disabled = true;
+    if (searchButton.disabled == true) {
+        searchButton.classList.add('disabled-button');
+    }
+})
+
+//NEW SEARCH
 function newSearch() {
     const newSearch =  document.createElement("button");
+    newSearch.classList.add('newSearch-button');
     newSearch.textContent = "New Search";
     const newSearchSection = document.getElementById("newSearch");
     newSearchSection.append(newSearch);
     newSearch.addEventListener("click", () => {
     location.reload();
+    
 })
 
 }
-
-
-const searchButton = document.querySelector("button");
-searchButton.addEventListener("click", () => {
-    getWeather();
-})
-
+//PRESS ENTER
 const inputField = document.querySelector("input");
+let enterKeyPressed = false;
 inputField.addEventListener("keyup", (event) => {
-    if (event.code === 'Enter') {
+    if (event.code === 'Enter' && !enterKeyPressed) {
         getWeather();
+        searchButton.disabled = true;
+        if (searchButton.disabled == true) {
+            searchButton.classList.add('disabled-button');
+        }
+        enterKeyPressed = true;
     }
 })
+
