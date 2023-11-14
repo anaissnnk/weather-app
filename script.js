@@ -39,27 +39,33 @@ async function getWeather () {
             weathersDescription.textContent = weatherBook[code].day.description;
             const forecastFirstSection = document.getElementById("forecast-firstsection");
             forecastFirstSection.append(weathersDescription);
-
             const firstweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(0, 4);
             const firstforecastArticles = document.querySelectorAll(".first-forecast-article");
             if (firstweathersMinTemperature.length === firstforecastArticles.length) {
                 firstweathersMinTemperature.forEach((temperature, index) => {
                     const minTemperature = document.createElement("span");
                     minTemperature.classList.add('min-temperature');
-                    minTemperature.textContent = "Min Temperature: " + temperature;
+                    minTemperature.textContent = "Min Temperature: " + temperature + "°";
                     const article = firstforecastArticles[index];
                     article.append(minTemperature);
                 });
             }
-
-
+            const firstweathersMaxTemperature = forecastInformation.daily.temperature_2m_max.slice(0, 4);
+            if (firstweathersMaxTemperature.length === firstforecastArticles.length) {
+                firstweathersMaxTemperature.forEach((temperature, index) => {
+                    const maxTemperature = document.createElement("span");
+                    maxTemperature.classList.add('max-temperature');
+                    maxTemperature.textContent = "Max Temperature: " + temperature + "°";
+                    const article = firstforecastArticles[index];
+                    article.append(maxTemperature);
+                });
+            }
         } else {
             const codeNotFound = document.createElement("article");
             codeNotFound.textContent = "Weather Code not found, but if it's Belgium it'll probably rain."
             forecastFirstSection.append(codeNotFound);
         }
     });
-    
     const secondweathersCodes = forecastInformation.daily.weather_code.slice(4, 7);
     secondweathersCodes.forEach(code => {
         if (weatherBook.hasOwnProperty(code)) {
@@ -68,19 +74,27 @@ async function getWeather () {
             weathersDescription.textContent = weatherBook[code].day.description;
             const forecastSecondSection = document.getElementById("forecast-secondsection");
             forecastSecondSection.append(weathersDescription);
-
             const secondweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(4, 7);
             const secondforecastArticles = document.querySelectorAll(".second-forecast-article");
             if (secondweathersMinTemperature.length === secondforecastArticles.length) {
                 secondweathersMinTemperature.forEach((temperature, index) => {
                     const minTemperature = document.createElement("span");
                     minTemperature.classList.add('min-temperature');
-                    minTemperature.textContent = "Min Temperature: " + temperature;
+                    minTemperature.textContent = "Min Temperature: " + temperature + "°";
                     const article = secondforecastArticles[index];
                     article.append(minTemperature);
                 });
             }
-
+            const secondweathersMaxTemperature = forecastInformation.daily.temperature_2m_max.slice(4, 7);
+            if (secondweathersMaxTemperature.length === secondforecastArticles.length) {
+                secondweathersMaxTemperature.forEach((temperature, index) => {
+                    const maxTemperature = document.createElement("span");
+                    maxTemperature.classList.add('max-temperature');
+                    maxTemperature.textContent = "Max Temperature: " + temperature + "°";
+                    const article = secondforecastArticles[index];
+                    article.append(maxTemperature);
+                });
+            }
         } else {
             const codeNotFound = document.createElement("article");
             codeNotFound.textContent = "Weather Code not found, but if it's Belgium it'll probably rain."
