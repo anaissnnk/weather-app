@@ -25,10 +25,11 @@ async function getWeather () {
     //Longitude
     const cityLongitude = cityInformation.results[0].longitude;
     //Forecast
-    const weatherApi = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + encodeURIComponent(cityLatitude) + "&longitude=" + encodeURIComponent(cityLongitude) + "&hourly=temperature_2m&daily=weather_code");
+    const weatherApi = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + encodeURIComponent(cityLatitude) + "&longitude=" + encodeURIComponent(cityLongitude) + "&hourly=temperature_2m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin");
     //https://api.open-meteo.com/v1/forecast?latitude=48.2085&longitude=16.3721&hourly=temperature_2m&daily=weather_code
+    //https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin
     const forecastInformation = await weatherApi.json();
-    //console.log(forecastInformation);
+    console.log(forecastInformation);
     //const weekDays = forecastInformation.daily.time;
     const firstweathersCodes = forecastInformation.daily.weather_code.slice(0, 4);
     firstweathersCodes.forEach(code => {
@@ -38,12 +39,27 @@ async function getWeather () {
             weathersDescription.textContent = weatherBook[code].day.description;
             const forecastFirstSection = document.getElementById("forecast-firstsection");
             forecastFirstSection.append(weathersDescription);
+
+            const firstweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(0, 4);
+            const firstforecastArticles = document.querySelectorAll("article");
+            if (firstweathersMinTemperature.length === firstforecastArticles.length) {
+                firstweathersMinTemperature.forEach((temperature, index) => {
+                    const minTemperature = document.createElement("span");
+                    minTemperature.classList.add('min-temperature');
+                    minTemperature.textContent = "Min Temperature: " + temperature;
+                    const article = firstforecastArticles[index];
+                    article.append(minTemperature);
+                });
+            }
+
+
         } else {
             const codeNotFound = document.createElement("article");
             codeNotFound.textContent = "Weather Code not found, but if it's Belgium it'll probably rain."
             forecastFirstSection.append(codeNotFound);
         }
     });
+    //MIN TEMPERATURE
     const secondweathersCodes = forecastInformation.daily.weather_code.slice(4, 7);
     secondweathersCodes.forEach(code => {
         if (weatherBook.hasOwnProperty(code)) {
@@ -72,19 +88,6 @@ searchButton.addEventListener("click", () => {
     enterKeyPressed = true;
 })
 
-//NEW SEARCH
-function newSearch() {
-    const newSearch =  document.createElement("button");
-    newSearch.classList.add('newSearch-button');
-    newSearch.textContent = "New Search";
-    const newSearchSection = document.getElementById("newSearch");
-    newSearchSection.append(newSearch);
-    newSearch.addEventListener("click", () => {
-    location.reload();
-    
-})
-
-}
 //PRESS ENTER
 const inputField = document.querySelector("input");
 let enterKeyPressed = false;
@@ -98,4 +101,20 @@ inputField.addEventListener("keyup", (event) => {
         enterKeyPressed = true;
     }
 })
+
+//NEW SEARCH
+function newSearch() {
+    const newSearch =  document.createElement("button");
+    newSearch.classList.add('newSearch-button');
+    newSearch.textContent = "New Search";
+    const newSearchSection = document.getElementById("newSearch");
+    newSearchSection.append(newSearch);
+    newSearch.addEventListener("click", () => {
+    location.reload();
+})
+}
+
+//const weatherApi = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + encodeURIComponent(cityLatitude) + "&longitude=" + encodeURIComponent(cityLongitude) + "&hourly=temperature_2m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin");
+//const minTemperature = forecastInformation.daily.temperature_2m_min.slice(0, 4);
+//const maxTemperature = forecastInformation.daily.temperature_2m_max.slice(0, 4);
 
