@@ -51,7 +51,7 @@
   align-items: stretch;
 }
 
-.forecast-article {
+.first-forecast-article, .second-forecast-article {
   display: flex;
   flex-direction: column;
   background-color: lightsalmon;

@@ -35,13 +35,13 @@ async function getWeather () {
     firstweathersCodes.forEach(code => {
         if (weatherBook.hasOwnProperty(code)) {
             const weathersDescription = document.createElement("article");
-            weathersDescription.classList.add('forecast-article');
+            weathersDescription.classList.add("first-forecast-article");
             weathersDescription.textContent = weatherBook[code].day.description;
             const forecastFirstSection = document.getElementById("forecast-firstsection");
             forecastFirstSection.append(weathersDescription);
 
             const firstweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(0, 4);
-            const firstforecastArticles = document.querySelectorAll("article");
+            const firstforecastArticles = document.querySelectorAll(".first-forecast-article");
             if (firstweathersMinTemperature.length === firstforecastArticles.length) {
                 firstweathersMinTemperature.forEach((temperature, index) => {
                     const minTemperature = document.createElement("span");
@@ -59,15 +59,28 @@ async function getWeather () {
             forecastFirstSection.append(codeNotFound);
         }
     });
-    //MIN TEMPERATURE
+    
     const secondweathersCodes = forecastInformation.daily.weather_code.slice(4, 7);
     secondweathersCodes.forEach(code => {
         if (weatherBook.hasOwnProperty(code)) {
             const weathersDescription = document.createElement("article");
-            weathersDescription.classList.add('forecast-article');
+            weathersDescription.classList.add("second-forecast-article");
             weathersDescription.textContent = weatherBook[code].day.description;
             const forecastSecondSection = document.getElementById("forecast-secondsection");
             forecastSecondSection.append(weathersDescription);
+
+            const secondweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(4, 7);
+            const secondforecastArticles = document.querySelectorAll(".second-forecast-article");
+            if (secondweathersMinTemperature.length === secondforecastArticles.length) {
+                secondweathersMinTemperature.forEach((temperature, index) => {
+                    const minTemperature = document.createElement("span");
+                    minTemperature.classList.add('min-temperature');
+                    minTemperature.textContent = "Min Temperature: " + temperature;
+                    const article = secondforecastArticles[index];
+                    article.append(minTemperature);
+                });
+            }
+
         } else {
             const codeNotFound = document.createElement("article");
             codeNotFound.textContent = "Weather Code not found, but if it's Belgium it'll probably rain."
