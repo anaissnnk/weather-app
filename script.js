@@ -69,6 +69,7 @@ searchButton.addEventListener("click", () => {
     if (searchButton.disabled == true) {
         searchButton.classList.add('disabled-button');
     }
+    enterKeyPressed = true;
 })
 
 //NEW SEARCH
