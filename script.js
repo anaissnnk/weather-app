@@ -34,13 +34,20 @@ async function getWeather () {
     const firstweathersCodes = forecastInformation.daily.weather_code.slice(0, 4);
     firstweathersCodes.forEach(code => {
         if (weatherBook.hasOwnProperty(code)) {
-            const weathersDescription = document.createElement("article");
-            weathersDescription.classList.add("first-forecast-article");
-            weathersDescription.textContent = weatherBook[code].day.description;
+            const weathersArticle = document.createElement("article");
+            weathersArticle.classList.add("first-forecast-article");
+            weathersArticle.textContent = weatherBook[code].day.description;
             const forecastFirstSection = document.getElementById("forecast-firstsection");
-            forecastFirstSection.append(weathersDescription);
+            forecastFirstSection.append(weathersArticle);
             const firstweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(0, 4);
             const firstforecastArticles = document.querySelectorAll(".first-forecast-article");
+            if (weatherBook.hasOwnProperty(code)) {
+                const entry = weatherBook[code];
+                const articleImage = document.createElement("img");
+                articleImage.classList.add("weather-icon");
+                articleImage.src = entry.day.image;
+                weathersArticle.append(articleImage);
+            } 
             if (firstweathersMinTemperature.length === firstforecastArticles.length) {
                 firstweathersMinTemperature.forEach((temperature, index) => {
                     const minTemperature = document.createElement("span");
@@ -69,12 +76,18 @@ async function getWeather () {
     const secondweathersCodes = forecastInformation.daily.weather_code.slice(4, 7);
     secondweathersCodes.forEach(code => {
         if (weatherBook.hasOwnProperty(code)) {
-            const weathersDescription = document.createElement("article");
-            weathersDescription.classList.add("second-forecast-article");
-            weathersDescription.textContent = weatherBook[code].day.description;
-
+            const weathersArticle = document.createElement("article");
+            weathersArticle.classList.add("second-forecast-article");
+            weathersArticle.textContent = weatherBook[code].day.description;
+            if (weatherBook.hasOwnProperty(code)) {
+                const entry = weatherBook[code];
+                const articleImage = document.createElement("img");
+                articleImage.classList.add("weather-icon");
+                articleImage.src = entry.day.image;
+                weathersArticle.append(articleImage);
+            } 
             const forecastSecondSection = document.getElementById("forecast-secondsection");
-            forecastSecondSection.append(weathersDescription);
+            forecastSecondSection.append(weathersArticle);
             const secondweathersMinTemperature = forecastInformation.daily.temperature_2m_min.slice(4, 7);
             const secondforecastArticles = document.querySelectorAll(".second-forecast-article");
             if (secondweathersMinTemperature.length === secondforecastArticles.length) {
