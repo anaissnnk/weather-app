@@ -26,18 +26,7 @@
 .search .app-article {
   margin: 1ch;
   background-color: lightseagreen;
-}
-
-.new-search {
-  display: flex;
-  flex-direction: column;
-  background-color: lightgreen;
-  justify-content: center;
-  margin: 1ch;
-}
-.new-search .newSearch-button {
-  width: 10%;
-  margin: auto;
+  padding: 1ch;
 }
 
 .city-information {
@@ -63,5 +52,6 @@
   flex-grow: 1;
   margin: 1ch;
   text-align: center;
-  max-width: 20%;
+  max-width: 15%;
+  padding: 1ch;
 }/*# sourceMappingURL=style.css.map */
