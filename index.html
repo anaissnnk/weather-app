@@ -6,12 +6,21 @@
     <link rel="stylesheet" href="style.css">
     <title>Ananaïs' Weather App</title>
 </head>
+<!-- BODY -->
 <body>
-    <h1>Check the Weather</h1>
-    <label for="city">City:</label>
-    <input type="text" id="city" name="city">
-    <button class="search-button">Search</button>
 
-    <script defer src="./script.js"></script>
+    <!-- SEARCH -->
+    <section class="search">
+        <h1>Check the Weather</h1>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <button class="search-button">Search</button>
+    </section>
+    <!--SEARCH RESULT-->
+    <main class="weekForecast">
+    </main>
+
+    <script type="module" defer src="./script.js"></script>
+    <script type="module" src="./weatherCode.js"></script>
 </body>
 </html>
