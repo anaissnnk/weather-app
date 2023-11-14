@@ -41,7 +41,20 @@ async function getWeather () {
             main.append(codeNotFound);
         }
     });
+    newSearch();
 }
+
+function newSearch() {
+    const newSearch =  document.createElement("button");
+    newSearch.textContent = "New Search";
+    const newSearchSection = document.getElementById("newSearch");
+    newSearchSection.append(newSearch);
+    newSearch.addEventListener("click", () => {
+    location.reload();
+})
+
+}
+
 
 const searchButton = document.querySelector("button");
 searchButton.addEventListener("click", () => {
