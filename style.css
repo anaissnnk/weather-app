@@ -54,4 +54,11 @@
   text-align: center;
   max-width: 15%;
   padding: 1ch;
+}
+
+.actual-date {
+  display: flex;
+  flex-direction: column;
+  margin: 1ch;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

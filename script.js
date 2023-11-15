@@ -156,7 +156,14 @@ function newSearch() {
 })
 }
 
-//const weatherApi = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + encodeURIComponent(cityLatitude) + "&longitude=" + encodeURIComponent(cityLongitude) + "&hourly=temperature_2m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin");
-//const minTemperature = forecastInformation.daily.temperature_2m_min.slice(0, 4);
-//const maxTemperature = forecastInformation.daily.temperature_2m_max.slice(0, 4);
+//DATE
+function getCurrentDate() {
+    const currentDate = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return currentDate.toLocaleDateString('en-US', options);
+}
 
+const dateSection = document.getElementById("actual-date");
+const currentDate = document.createElement("span");
+currentDate.textContent = "Today is " + getCurrentDate();
+dateSection.append(currentDate);
