@@ -45,9 +45,10 @@
 .forecast-firstsection, .forecast-secondsection {
     display: flex;
     flex-direction: row;
-    flex: 1;
+    flex-grow: 1;
     justify-content: space-evenly;
     align-items: stretch;
+    justify-items: stretch;
     margin: 2ch;
 }
 
@@ -58,6 +59,7 @@
     text-align: center;
     align-items: center;
     background-color: whitesmoke;
+    flex-grow: 1;
     margin: 1ch;
     padding: 2ch;
     max-width: 20%;
