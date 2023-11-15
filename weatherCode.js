@@ -2,7 +2,7 @@ const weatherBook = {
     "0": {
       day: {
         description: "Sunny",
-        image: "http://openweathermap.org/img/wn/01d@2x.png",
+        image: "https://media.tenor.com/ZGRxs0nSXccAAAAi/sunny-day-sunny.gif",
       },
       night: {
         description: "Clear",
@@ -22,11 +22,11 @@ const weatherBook = {
     "2": {
       day: {
         description: "Partly Cloudy",
-        image: "http://openweathermap.org/img/wn/02d@2x.png",
+        image: "https://media2.giphy.com/media/TercUvhYRPkmkDUNZk/giphy.gif?cid=ecf05e4719okkramyieuctysikszpxop97koliehvieyleir&ep=v1_stickers_search&rid=giphy.gif&ct=s",
       },
       night: {
         description: "Partly Cloudy",
-        image: "http://openweathermap.org/img/wn/02n@2x.png",
+        image: "https://media2.giphy.com/media/TercUvhYRPkmkDUNZk/giphy.gif?cid=ecf05e4719okkramyieuctysikszpxop97koliehvieyleir&ep=v1_stickers_search&rid=giphy.gif&ct=s",
       },
     },
     "3": {
@@ -82,11 +82,11 @@ const weatherBook = {
 	"55":{
 		day:{
 			description:"Heavy Drizzle",
-			image:"http://openweathermap.org/img/wn/09d@2x.png",
+			image:"https://tenor.com/fr/view/kawaii-anime-storm-typhoon-windy-gif-13340027",
 		},
 		night:{
 			description:"Heavy Drizzle",
-			image:"http://openweathermap.org/img/wn/09n@2x.png",
+			image:"https://tenor.com/fr/view/kawaii-anime-storm-typhoon-windy-gif-13340027",
 		}
 	},
 	"56":{
@@ -112,11 +112,11 @@ const weatherBook = {
 	61:{
 		day:{
 			description:"Light Rain",
-			image:"http://openweathermap.org/img/wn/10d@2x.png",
+			image:"https://media.tenor.com/91uiUn1R0kAAAAAi/rainy-weather-gloomy.gif",
 		},
 		night:{
 			description:"Light Rain",
-			image:"http://openweathermap.org/img/wn/10n@2x.png",
+			image:"https://media.tenor.com/91uiUn1R0kAAAAAi/rainy-weather-gloomy.gif",
 		}
 	},
 	"63":{
@@ -132,11 +132,11 @@ const weatherBook = {
 	"65":{
 		day:{
 			description:"Heavy Rain",
-			image:"http://openweathermap.org/img/wn/10d@2x.png",
+			image:"https://media.tenor.com/yxs6gKztcuUAAAAi/kawaii-anime.gif",
 		},
 		night:{
 			description:"Heavy Rain",
-			image:"http://openweathermap.org/img/wn/10n@2x.png",
+			image:"https://media.tenor.com/yxs6gKztcuUAAAAi/kawaii-anime.gif",
 		}
 	},
 	"66":{
@@ -202,11 +202,11 @@ const weatherBook = {
 	"80":{
 		day:{
 			description:"Light Showers",
-			image:"http://openweathermap.org/img/wn/09d@2x.png",
+			image:"https://media4.giphy.com/media/09MsSFGDZvKOki1kxY/giphy.gif?cid=ecf05e47aluf5qc5pnvryyhg9bi97o65qjlwiaztux6o2rx2&ep=v1_stickers_search&rid=giphy.gif&ct=s",
 		},
 		night:{
 			description:"Light Showers",
-			image:"http://openweathermap.org/img/wn/09n@2x.png",
+			image:"https://media4.giphy.com/media/09MsSFGDZvKOki1kxY/giphy.gif?cid=ecf05e47aluf5qc5pnvryyhg9bi97o65qjlwiaztux6o2rx2&ep=v1_stickers_search&rid=giphy.gif&ct=s",
 		}
 	},
 	"81":{
