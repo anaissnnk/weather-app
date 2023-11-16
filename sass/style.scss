@@ -72,6 +72,7 @@ body {
     text-align: center;
     background-color: variables.$infoBgColor;
     color: variables.$infoColor;
+    padding: 1ch;
 }
 
 //FORECAST
@@ -83,6 +84,7 @@ body {
     align-items: stretch;
     justify-items: stretch;
     margin: 2ch;
+    padding: 1ch;
 }
 
 .forecast-article {
@@ -118,4 +120,38 @@ body {
     margin: 1ch;
     text-align: center;
 }
+
+//MEDIA QUERY
+@media only screen and (max-width: 800px) {
+    .search {
+        display: flex;
+        flex-direction: column;
+        .search-heading {
+            max-width: 80%;
+        }
+        .app-article {
+            max-width: 60%;
+            font-size: large;
+        }
+    }
+    .forecast-firstsection, .forecast-secondsection {
+        display: flex;
+        flex-direction: column;
+    }
+    .forecast-article {
+        max-width: 100%;
+        font-size: x-large;
+        .weather-img {
+            width: 200px;
+            height: 200px;
+            margin: 1ch;
+        }
+        .article-date {
+            font-size: xx-large;
+        }
+        .weather-description {
+            font-size: xx-large;
+        }
+    }
+  }
 
