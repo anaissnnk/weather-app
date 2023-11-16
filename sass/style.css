@@ -1,0 +1,75 @@
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* BUTTONS */
+.search-button, .newSearch-button {
+  cursor: pointer;
+}
+
+.disabled-button {
+  cursor: not-allowed;
+}
+
+.search {
+  text-align: center;
+  max-width: 35%;
+  margin: auto;
+  padding: 1ch;
+  background-color: lightblue;
+}
+.search .search-heading {
+  margin: 1ch;
+}
+.search .app-article {
+  margin: 1ch;
+  background-color: lightseagreen;
+  padding: 1ch;
+}
+
+.city-information {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: lightcoral;
+  margin: 1ch;
+}
+
+.forecast-firstsection, .forecast-secondsection {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  align-items: stretch;
+  justify-items: stretch;
+  margin: 2ch;
+}
+
+.forecast-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: whitesmoke;
+  flex: 1;
+  margin: 1ch;
+  padding: 2ch;
+  max-width: 15%;
+  border-radius: 10px;
+  box-shadow: 10px 10px lightblue;
+}
+.forecast-article .weather-img {
+  width: 100px;
+  height: 100px;
+  margin: 1ch;
+}
+
+.actual-date {
+  display: flex;
+  flex-direction: column;
+  margin: 1ch;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
