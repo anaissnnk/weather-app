@@ -82,11 +82,11 @@ const weatherBook = {
 	"55":{
 		day:{
 			description:"Heavy Drizzle",
-			image:"https://tenor.com/fr/view/kawaii-anime-storm-typhoon-windy-gif-13340027",
+			image:"https://media.tenor.com/yxs6gKztcuUAAAAi/kawaii-anime.gif",
 		},
 		night:{
 			description:"Heavy Drizzle",
-			image:"https://tenor.com/fr/view/kawaii-anime-storm-typhoon-windy-gif-13340027",
+			image:"https://media.tenor.com/yxs6gKztcuUAAAAi/kawaii-anime.gif",
 		}
 	},
 	"56":{
