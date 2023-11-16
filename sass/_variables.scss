@@ -9,8 +9,6 @@
     src: url(../fonts/ToughCookiesMedium-4BpZp.ttf)
 }
 
-
-
 //fonts-searchbar
 $h1Font: Notes;
 $currentDateFont: Courier;
@@ -18,8 +16,10 @@ $currentDateFont: Courier;
 //fonts-cards
 $dateFont: Cookies;
 $weatherDescriptionFont: Courier;
-$cityInformation: Courier;
 
+//city information
+$infoBgColor: black;
+$infoColor: white;
 
 //card
 $cardBgColor: whitesmoke;

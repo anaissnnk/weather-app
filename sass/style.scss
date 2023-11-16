@@ -7,6 +7,16 @@
     font-family: monospace;
 }
 
+body {
+        width: 100%;
+    background-color: white;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.495) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.495) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+
 /* BUTTONS */
 .search-button, .newSearch-button {
     cursor: pointer;
@@ -40,18 +50,19 @@
     margin: 1ch;
 }
 
+//FORECAST CONTAINER
+
+
 //FORECAST HEADERS
 .city-information {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: lightcoral;
-    margin: 1ch;
-    font-family: variables.$cityInformation;
+    background-color: variables.$infoBgColor;
+    color: variables.$infoColor;
 }
 
 //FORECAST
-
 .forecast-firstsection, .forecast-secondsection {
     display: flex;
     flex-direction: row;
