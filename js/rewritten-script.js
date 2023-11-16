@@ -88,7 +88,7 @@ searchButton.addEventListener("click", () => {
 const inputField = document.querySelector("input");
 let enterKeyPressed = false;
 inputField.addEventListener("keyup", (event) => {
-    if (event.code === 'Enter' && !enterKeyPressed) {
+    if (event.code === 'Enter' && !enterKeyPressed && inputField.value.trim() !== '') {
         getWeather();
         searchButton.disabled = true;
         if (searchButton.disabled == true) {
