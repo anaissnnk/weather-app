@@ -8,7 +8,7 @@
 }
 
 body {
-        width: 100%;
+    width: 100%;
     background-color: white;
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.495) 1px, transparent 1px),
@@ -32,19 +32,23 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 1ch;
     background-color: variables.$searchBgColor;
     color: variables.$headerColor;
     .search-heading {
-        margin: 1ch;
+        text-align: center;
+        padding: 1ch;
+        max-width: 30%;
         font-family: variables.$h1Font;
+    }
+    .search-bar {
+        padding: 1ch;
     }
     .app-article {
         margin: 1ch;
         background-color: variables.$rulesBgColor;
         text-align: justify;
         padding: 1ch;
+        max-width: 25%;
     }
 }
 
@@ -97,6 +101,7 @@ body {
     }
     .weather-description {
         font-family: variables.$weatherDescriptionFont;
+        color: variables.$weatherColor;
     }
 }
 

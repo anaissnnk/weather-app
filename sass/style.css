@@ -33,20 +33,24 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 1ch;
   background-color: rgb(24, 24, 24);
   color: white;
 }
 .search .search-heading {
-  margin: 1ch;
+  text-align: center;
+  padding: 1ch;
+  max-width: 30%;
   font-family: Notes;
+}
+.search .search-bar {
+  padding: 1ch;
 }
 .search .app-article {
   margin: 1ch;
   background-color: #135467;
   text-align: justify;
   padding: 1ch;
+  max-width: 25%;
 }
 
 .current-date {
@@ -96,6 +100,7 @@ body {
 }
 .forecast-article .weather-description {
   font-family: Courier;
+  color: #0E4F62;
 }
 
 .actual-date {
