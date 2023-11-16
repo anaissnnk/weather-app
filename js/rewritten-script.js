@@ -103,9 +103,8 @@ function newSearch() {
     const newSearch =  document.createElement("button");
     newSearch.classList.add('newSearch-button');
     newSearch.textContent = "New Search";
-    const header = document.querySelector("header");
-    const article = document.getElementById("app-article");
-    header.insertBefore(newSearch, article);
+    const searchBar = document.getElementById("search-bar");
+    searchBar.append(newSearch);
     newSearch.addEventListener("click", () => {
     location.reload();
 })

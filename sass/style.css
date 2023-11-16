@@ -30,11 +30,13 @@ body {
 }
 
 .search {
-  text-align: center;
-  max-width: 35%;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 1ch;
-  background-color: lightblue;
+  background-color: rgb(24, 24, 24);
+  color: white;
 }
 .search .search-heading {
   margin: 1ch;
@@ -42,7 +44,8 @@ body {
 }
 .search .app-article {
   margin: 1ch;
-  background-color: lightseagreen;
+  background-color: #135467;
+  text-align: justify;
   padding: 1ch;
 }
 

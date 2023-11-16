@@ -27,20 +27,23 @@ body {
 }
 
 
-//SEARCH BAR
+//HEADER
 .search {
-    text-align: center;
-    max-width: 35%;
-    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 1ch;
-    background-color: lightblue;
+    background-color: variables.$searchBgColor;
+    color: variables.$headerColor;
     .search-heading {
         margin: 1ch;
         font-family: variables.$h1Font;
     }
     .app-article {
         margin: 1ch;
-        background-color: lightseagreen;
+        background-color: variables.$rulesBgColor;
+        text-align: justify;
         padding: 1ch;
     }
 }
@@ -49,8 +52,6 @@ body {
     font-family: variables.$currentDateFont;
     margin: 1ch;
 }
-
-//FORECAST CONTAINER
 
 
 //FORECAST HEADERS
