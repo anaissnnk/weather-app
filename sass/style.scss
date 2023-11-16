@@ -1,3 +1,5 @@
+@use 'variables';
+
 /* GENERAL */
 * {
     margin: 0;
@@ -58,13 +60,13 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: variables.$cardBgColor;
     flex: 1;
     margin: 1ch;
     padding: 2ch;
     max-width: 15%;
     border-radius: 10px;
-    box-shadow: 10px 10px lightblue;
+    box-shadow: variables.$cardShadow;
     .weather-img {
         width: 100px;
         height: 100px;
