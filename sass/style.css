@@ -22,7 +22,15 @@ body {
 
 /* BUTTONS */
 .search-button, .newSearch-button {
+  background-color: #135467;
+  color: white;
+  border-radius: 5px;
+  margin: 1ch;
   cursor: pointer;
+}
+.search-button:hover, .newSearch-button:hover {
+  background-color: lightblue;
+  color: black;
 }
 
 .disabled-button {
@@ -52,8 +60,7 @@ body {
   padding: 1ch;
   max-width: 25%;
 }
-
-.current-date {
+.search .current-date {
   font-family: Courier;
   margin: 1ch;
 }

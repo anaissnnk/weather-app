@@ -19,7 +19,15 @@ body {
 
 /* BUTTONS */
 .search-button, .newSearch-button {
+    background-color: variables.$buttonBgColor;
+    color: variables.$buttonColor;
+    border-radius: 5px;
+    margin: 1ch;
     cursor: pointer;
+    &:hover {
+        background-color: variables.$buttonHoverBgColor;
+        color: variables.$buttonHoverColor;
+    }
 }
 
 .disabled-button {
@@ -50,11 +58,10 @@ body {
         padding: 1ch;
         max-width: 25%;
     }
-}
-
-.current-date {
-    font-family: variables.$currentDateFont;
-    margin: 1ch;
+    .current-date {
+        font-family: variables.$currentDateFont;
+        margin: 1ch;
+    }
 }
 
 
