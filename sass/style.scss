@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: monospace;
 }
 
 /* BUTTONS */
@@ -25,12 +26,18 @@
     background-color: lightblue;
     .search-heading {
         margin: 1ch;
+        font-family: variables.$h1Font;
     }
     .app-article {
         margin: 1ch;
         background-color: lightseagreen;
         padding: 1ch;
     }
+}
+
+.current-date {
+    font-family: variables.$currentDateFont;
+    margin: 1ch;
 }
 
 //FORECAST HEADERS
@@ -40,6 +47,7 @@
     text-align: center;
     background-color: lightcoral;
     margin: 1ch;
+    font-family: variables.$cityInformation;
 }
 
 //FORECAST
@@ -71,6 +79,12 @@
         width: 100px;
         height: 100px;
         margin: 1ch;
+    }
+    .article-date {
+        font-family: variables.$dateFont;
+    }
+    .weather-description {
+        font-family: variables.$weatherDescriptionFont;
     }
 }
 

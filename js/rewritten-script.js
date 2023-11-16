@@ -46,6 +46,7 @@ async function getWeather () {
 
     //add weather code description
     const weatherHeading = document.createElement("h3");
+    weatherHeading.classList.add("weather-description");
     weatherHeading.textContent = weatherBook[forecastInformation.daily.weather_code[i]].day.description;
     weatherArticle.append(weatherHeading);
 
@@ -119,5 +120,6 @@ function getCurrentDate() {
 
 const dateSection = document.getElementById("actual-date");
 const currentDate = document.createElement("span");
+currentDate.classList.add("current-date");
 currentDate.textContent = "Today is " + getCurrentDate();
 dateSection.append(currentDate);

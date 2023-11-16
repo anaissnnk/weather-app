@@ -1,7 +1,16 @@
+@font-face {
+  font-family: Notes;
+  src: url(../fonts/CuteNotes-y2em.ttf);
+}
+@font-face {
+  font-family: Cookies;
+  src: url(../fonts/ToughCookiesMedium-4BpZp.ttf);
+}
 /* GENERAL */
 * {
   margin: 0;
   padding: 0;
+  font-family: monospace;
 }
 
 /* BUTTONS */
@@ -22,11 +31,17 @@
 }
 .search .search-heading {
   margin: 1ch;
+  font-family: Notes;
 }
 .search .app-article {
   margin: 1ch;
   background-color: lightseagreen;
   padding: 1ch;
+}
+
+.current-date {
+  font-family: Courier;
+  margin: 1ch;
 }
 
 .city-information {
@@ -35,6 +50,7 @@
   text-align: center;
   background-color: lightcoral;
   margin: 1ch;
+  font-family: Courier;
 }
 
 .forecast-firstsection, .forecast-secondsection {
@@ -65,6 +81,12 @@
   width: 100px;
   height: 100px;
   margin: 1ch;
+}
+.forecast-article .article-date {
+  font-family: Cookies;
+}
+.forecast-article .weather-description {
+  font-family: Courier;
 }
 
 .actual-date {

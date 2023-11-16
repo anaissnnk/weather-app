@@ -1,3 +1,26 @@
+//fonts
+@font-face {
+    font-family: Notes;
+    src: url(../fonts/CuteNotes-y2em.ttf)
+}
+
+@font-face {
+    font-family: Cookies;
+    src: url(../fonts/ToughCookiesMedium-4BpZp.ttf)
+}
+
+
+
+//fonts-searchbar
+$h1Font: Notes;
+$currentDateFont: Courier;
+
+//fonts-cards
+$dateFont: Cookies;
+$weatherDescriptionFont: Courier;
+$cityInformation: Courier;
+
+
 //card
 $cardBgColor: whitesmoke;
 $cardShadow: 10px 10px lightblue;
