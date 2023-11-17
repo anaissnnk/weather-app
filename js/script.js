@@ -110,15 +110,17 @@ function newSearch() {
 })
 }
 
-//DATE
+//DATE FUNCTION
 function getCurrentDate() {
     const currentDate = new Date();
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return currentDate.toLocaleDateString('en-US', options);
 }
 
+//PLACE DATE
 const dateSection = document.getElementById("actual-date");
 const currentDate = document.createElement("span");
 currentDate.classList.add("current-date");
 currentDate.textContent = "Today is " + getCurrentDate();
 dateSection.append(currentDate);
+
