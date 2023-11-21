@@ -1,7 +1,5 @@
-// Weather Book
-import weatherBook from './weatherCode.js';
-
 'use strict'
+import weatherBook from './weatherCode.js';
 
 //get city
 const getCityInformation = async () => {
@@ -38,7 +36,6 @@ const getWeather = async() => {
 }
 
 //createCard
-
 const createCard = async () => {
     let container;
     for (let i = 0; i < 5; i++) {
@@ -59,7 +56,9 @@ const createCard = async () => {
     const forecastInformation = await weatherApi.json();
     const articleDate = document.createElement("h2");
     articleDate.classList.add("article-date");
-    articleDate.textContent = forecastInformation.daily.time[i];
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const getDate = new Date()
+    articleDate.textContent = weekdays[(getDate.getDay() + i) % 7]
     weatherArticle.append(articleDate);
 
     //add weather code description
