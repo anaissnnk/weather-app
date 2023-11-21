@@ -41,8 +41,11 @@ async function getWeather () {
     const forecastInformation = await weatherApi.json();
     const articleDate = document.createElement("h2");
     articleDate.classList.add("article-date");
-    articleDate.textContent = forecastInformation.daily.time[i];
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const date = new Date()
+    articleDate.textContent = weekdays[(date.getDay() + i) % 7];
     weatherArticle.append(articleDate);
+
 
     //add weather code description
     const weatherHeading = document.createElement("h3");
